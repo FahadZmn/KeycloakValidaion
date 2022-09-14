@@ -1,0 +1,36 @@
+
+#
+#spring:
+#  jpa:
+#    database: POSTGRESQL
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/myoauth2
+#    username: postgres
+#    password: admin
+#    driver-class-name: org.postgresql.Driver
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: http://localhost:8080/realms/nintriva
+#          jwk-set-uri: http://localhost:8080/realms/nintriva/protocol/openid-connect/certs
+#  sql:
+#    init:
+#      platform: postgres
+
+
+server:
+  port: 9090
+
+#spring:
+#  h2:
+#    console:
+#      enabled: true
+
+#keycloak:
+#  realm: nms
+#  auth-server-url: http://localhost:8080/auth
+#  resource: springboot-keycloak
