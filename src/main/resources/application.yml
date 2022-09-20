@@ -22,15 +22,27 @@
 #      platform: postgres
 
 
-server:
-  port: 9090
+#server:
+#  port: 9090
 
 #spring:
 #  h2:
 #    console:
 #      enabled: true
 
-#keycloak:
-#  realm: nms
-#  auth-server-url: http://localhost:8080/auth
-#  resource: springboot-keycloak
+keycloak:
+  realm: nms
+  auth-server-url: http://localhost:8080/realms/
+  resource: springboot-keycloak
+
+#  keycloak : realm : nms
+#  keycloak : auth-server-url : http://localhost:8080/auth
+  ssl-required :  external
+  #keycloak resource is the client ID
+#  keycloak : resource : springboot-keycloak
+  use-resource-role-mappings : true
+#The line below will prevent redirect to login page
+  bearer-only: true
+
+server :
+  port : 9090

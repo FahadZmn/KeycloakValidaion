@@ -22,6 +22,7 @@
     import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper;
     import org.springframework.security.web.authentication.session.NullAuthenticatedSessionStrategy;
     import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
+    import org.springframework.security.web.header.writers.StaticHeadersWriter;
 
     @Configuration
     @EnableWebSecurity
@@ -32,7 +33,7 @@
         protected void configure(HttpSecurity http) throws Exception {
             super.configure(http);
 
-            http.cors().and().csrf().disable().sessionManagement().
+            http.cors().and().headers().addHeaderWriter(new StaticHeadersWriter("Access-Control-Allow-Origin","*")).and().csrf().disable().sessionManagement().
 
                     sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
                     .antMatchers("/users/unprotected-data").permitAll()
