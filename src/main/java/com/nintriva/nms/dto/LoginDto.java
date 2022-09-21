@@ -12,9 +12,11 @@
     @NoArgsConstructor
     @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
     public class LoginDto {
+
         private String username;
         private String password;
         private String client_id;
         private String grant_type;
+
 
     }

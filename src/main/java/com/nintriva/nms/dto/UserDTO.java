@@ -1,12 +1,21 @@
     package com.nintriva.nms.dto;
 
     public class UserDTO {
+
+        private String username;
         private String email;
         private String password;
         private String firstname;
         private String lastname;
         private int statusCode;
         private String status;
+
+        public String getUsername(){
+            return username;
+        }
+        public void setUsername(String username){
+            this.username = username;
+        }
 
         public String getEmail() {
             return email;
